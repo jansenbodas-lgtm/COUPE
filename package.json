@@ -1,0 +1,10 @@
+{
+  "name": "coupe-tower-landing",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Landing page do Coupé Tower (RJZ Cyrela) + CRM de leads",
+  "scripts": {
+    "build": "node scripts/build.js",
+    "start": "python3 -m http.server 8000"
+  }
+}

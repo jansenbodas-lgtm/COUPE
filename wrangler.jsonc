@@ -1,0 +1,31 @@
+{
+  // Worker "coupe" (Cloudflare Workers Builds): landing page + CRM em /admin
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "coupe",
+  "main": "src/worker.js",
+  "compatibility_date": "2025-06-01",
+  "assets": {
+    "directory": "./dist",
+    "binding": "ASSETS",
+    // a página principal passa pelo Worker (cookies próprios + PageView pelo servidor)
+    "run_worker_first": ["/", "/index.html"]
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "coupe-crm"
+      // "database_id": "COLE_AQUI_O_ID_DO_D1"  (npx wrangler d1 create coupe-crm)
+    }
+  ],
+  "rules": [
+    { "type": "Text", "globs": ["**/*.html"], "fallthrough": true }
+  ],
+  "vars": {
+    // ID do pixel da Meta (público). Deixe vazio para desligar a API de Conversões.
+    // O token vai como Secret META_CAPI_TOKEN no painel do Cloudflare, nunca aqui.
+    "META_PIXEL_ID": ""
+    // "SITE_URL": "https://coupe.seudominio.com.br"  (redireciona o *.workers.dev para o domínio oficial)
+  },
+  "keep_vars": true,
+  "observability": { "enabled": true }
+}
