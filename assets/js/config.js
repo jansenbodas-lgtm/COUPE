@@ -12,10 +12,10 @@ window.COUPE_CONFIG = {
   whatsapp: "5521983799691",
   telefoneExibicao: "(21) 98379-9691",
   corretorNome: "Carla Jansen",
-  creci: "94120",
+  creci: "94190",
   mensagemWhatsApp: "Olá, Carla! Tenho interesse no Coupé Tower e gostaria de receber a apresentação completa.",
   formEndpoint: "/api/leads",
-  metaPixelId: "",
-  googleAdsId: "",
-  googleAdsLeadLabel: ""
+  metaPixelId: "650460263189144",
+  googleAdsId: "AW-10894823435",
+  googleAdsLeadLabel: "V25mCNft5-EcEIugh8so"
 };

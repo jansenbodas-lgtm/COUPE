@@ -2,7 +2,7 @@
 
 Landing page de alto padrão do **Coupé Tower** (RJZ Cyrela, powered by Porsche Consulting), na Barra da Tijuca, com CRM de leads próprio. As imagens e os textos foram tirados do book do cliente e da ficha técnica.
 
-Corretora: **Carla Jansen** · CRECI 94120 · (21) 98379-9691
+Corretora: **Carla Jansen** · CRECI 94190 · (21) 98379-9691
 
 ## Estrutura
 ```
@@ -32,15 +32,16 @@ O formulário de contato no fim da página segue o mesmo fluxo. O CRM agrupa os 
 - `LEAD_WEBHOOK_URL` (opcional): envia cada lead em JSON para Make, Zapier, n8n ou Slack.
 
 ## Publicar no Cloudflare (Workers)
-1. Crie o banco: `npx wrangler d1 create coupe-crm` e cole o `database_id` em `wrangler.jsonc`. O Worker cria as tabelas sozinho.
+1. Banco D1 `coupe-crm` já criado e configurado em `wrangler.jsonc`. O Worker cria as tabelas sozinho.
 2. Workers Builds: comando de build `npm run build`, comando de deploy `npx wrangler deploy`.
 3. Ajuste o `canonical` em `index.html` e, se quiser, `SITE_URL` em `wrangler.jsonc` para o domínio final.
 
-## Anúncios (opcional)
-- **Meta:** preencha `metaPixelId` em `config.js`. Para a API de Conversões (Lead e cada etapa do CRM pelo servidor), preencha também `META_PIXEL_ID` em `wrangler.jsonc` e crie o Secret `META_CAPI_TOKEN`.
-- **Google Ads:** preencha `googleAdsId` e `googleAdsLeadLabel` em `config.js`.
+## Anúncios
+Mesmas contas do ON Resort:
+- **Meta Pixel** `650460263189144` (PageView e Lead no navegador). Para a API de Conversões (Lead e cada etapa do CRM pelo servidor), crie o Secret `META_CAPI_TOKEN` (ou `Apimeta`) no Worker `coupe`.
+- **Google Ads** `AW-10894823435`, conversão `V25mCNft5-EcEIugh8so`, com conversões otimizadas.
 
-Com os campos vazios, nenhuma tag é carregada.
+Para desligar uma tag, deixe o campo vazio em `assets/js/config.js`.
 
 ## Testar localmente
 ```bash
