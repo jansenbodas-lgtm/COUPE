@@ -2,3 +2,5 @@ User-agent: *
 Allow: /
 Disallow: /admin
 Disallow: /api/
+
+Sitemap: https://coupe.lancamentocyrela.com.br/sitemap.xml

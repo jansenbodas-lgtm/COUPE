@@ -23,8 +23,9 @@
   "vars": {
     // ID do pixel da Meta (público), o mesmo do ON Resort.
     // O token vai como Secret META_CAPI_TOKEN no painel do Cloudflare, nunca aqui.
-    "META_PIXEL_ID": "650460263189144"
-    // "SITE_URL": "https://coupe.seudominio.com.br"  (redireciona o *.workers.dev para o domínio oficial)
+    "META_PIXEL_ID": "650460263189144",
+    // domínio oficial: o endereço *.workers.dev redireciona para cá (CRM e API seguem nos dois)
+    "SITE_URL": "https://coupe.lancamentocyrela.com.br"
   },
   "keep_vars": true,
   "observability": { "enabled": true }

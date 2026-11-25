@@ -25,6 +25,7 @@ Todos os botões de WhatsApp abrem um **popup que pede nome, telefone e e-mail**
 O formulário de contato no fim da página segue o mesmo fluxo. O CRM agrupa os leads pelo telefone, então a mesma pessoa não vira dois leads.
 
 ## CRM (`/admin`)
+- **Endereço:** https://coupe.lancamentocyrela.com.br/admin
 - Login padrão **admin / admin**. Para trocar, crie o Secret `CRM_SENHA` (e, se quiser, `CRM_USUARIO`).
 - **Pipeline padrão:** Novo lead → Tentando contato → Consegui falar → Marcou visita → Visitou → Fez proposta → Venda fechada / Perdido. Os cards mudam de etapa arrastando.
 - Ficha do lead com dados, unidade, valor, visita, próxima ação, motivo de perda, observações, histórico e atalhos de WhatsApp, ligação e e-mail.
@@ -34,7 +35,7 @@ O formulário de contato no fim da página segue o mesmo fluxo. O CRM agrupa os 
 ## Publicar no Cloudflare (Workers)
 1. Banco D1 `coupe-crm` já criado e configurado em `wrangler.jsonc`. O Worker cria as tabelas sozinho.
 2. Workers Builds: comando de build `npm run build`, comando de deploy `npx wrangler deploy`.
-3. Ajuste o `canonical` em `index.html` e, se quiser, `SITE_URL` em `wrangler.jsonc` para o domínio final.
+3. Domínio oficial: https://coupe.lancamentocyrela.com.br (`SITE_URL` em `wrangler.jsonc`).
 
 ## Anúncios
 Mesmas contas do ON Resort:
